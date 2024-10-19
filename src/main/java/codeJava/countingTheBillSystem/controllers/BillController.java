@@ -7,5 +7,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1")
 public class BillController {
 
-    
+    @PostMapping("/wallet")
+    public ResponseBody changeBalance (@RequestBody ChangeBillRequest request){
+
+    }
+
+    @GetMapping("/wallets/")
+    public ResponseBody getWalletBalance (){
+
+    }
 }

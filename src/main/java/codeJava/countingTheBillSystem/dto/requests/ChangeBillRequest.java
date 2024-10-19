@@ -1,7 +1,12 @@
 package codeJava.countingTheBillSystem.dto.requests;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class ChangeBillRequest {
-    String uuid;
-    String operationType;
-    Long amount;
+    private String uuid;
+    private String operationType;
+    private Long amount;
 }
