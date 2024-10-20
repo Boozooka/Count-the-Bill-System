@@ -19,5 +19,5 @@ public class Wallet {
     @Id
     private UUID uuid;
 
-    private Long amount;
+    private Long balance;
 }

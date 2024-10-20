@@ -1,4 +1,4 @@
-package codeJava.countingTheBillSystem.repositories;
+package codeJava.countingTheBillSystem.interfaces.repositories;
 
 import codeJava.countingTheBillSystem.models.Wallet;
 import org.springframework.data.jpa.repository.JpaRepository;
