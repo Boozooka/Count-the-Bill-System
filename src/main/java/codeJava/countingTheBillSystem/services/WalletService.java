@@ -6,7 +6,6 @@ import codeJava.countingTheBillSystem.interfaces.services.WalletServiceInterface
 import codeJava.countingTheBillSystem.models.Wallet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.UUID;
 
 @Service
@@ -33,5 +32,12 @@ public class WalletService implements WalletServiceInterface {
         UUID uuid = UUID.fromString(uuidStr);
         Wallet wallet = repository.getReferenceById(uuid);
         return wallet.getBalance();
+    }
+
+    public void addNewWallet(String uuidStr){
+        UUID uuid = UUID.fromString(uuidStr);
+
+        Wallet wallet = new Wallet(uuid, 0L);
+        repository.save(wallet);
     }
 }
