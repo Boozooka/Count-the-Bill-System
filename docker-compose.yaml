@@ -14,14 +14,14 @@ services:
         - ./pgdb:/docker-entrypoint-initdb.d
 
     application:
-      container_name: boozooka/counting_the_bill_system
-        build: .
-        expose:
-          - "8080"
-        ports:
-          - "8080:8080"
-        environment:
+      container_name: boozooka/counting-the-bill-system
+      build: .
+      expose:
+       - "8080"
+      ports:
+       - "8080:8080"
+      environment:
           WAIT_HOSTS: mysql:5432
-        depends_on:
-          - mysql
+      depends_on:
+         - pgdb
 
