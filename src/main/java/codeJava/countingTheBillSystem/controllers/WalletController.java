@@ -6,6 +6,7 @@ import codeJava.countingTheBillSystem.dto.requests.ChangeBillRequest;
 import codeJava.countingTheBillSystem.exceptions.BadChangeRequestException;
 import codeJava.countingTheBillSystem.exceptions.BadUUIDException;
 import codeJava.countingTheBillSystem.interfaces.controllers.WalletControllerInterface;
+import codeJava.countingTheBillSystem.interfaces.services.WalletServiceInterface;
 import codeJava.countingTheBillSystem.services.WalletService;
 import codeJava.countingTheBillSystem.utils.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class WalletController implements WalletControllerInterface {
     UUIDUtils uuidUtils;
 
     @Autowired
-    WalletService service;
+    WalletServiceInterface service;
 
     @PostMapping("/wallet")
     public ResponseEntity<?> changeBalance (@RequestBody ChangeBillRequest request){
@@ -53,9 +54,9 @@ public class WalletController implements WalletControllerInterface {
         return ResponseEntity.ok(service.getBalance(uuid));
     }
 
-    @PostMapping("/add-new-wallet")
+    /*@PostMapping("/add-new-wallet")
     public ResponseEntity<?> addNewWallet (@RequestBody AddNewWalletRequest request){
         service.addNewWallet(request.getUuid());
         return ResponseEntity.ok("OK");
-    }
+    }*/
 }
